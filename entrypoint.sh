@@ -29,14 +29,16 @@ then
   REMOTE_NAME="upstream"
 fi
 
-CLONE_DIR=$(mktemp -d)
+# FIXME: removing this as it seems actions automatically checkouts the repo under $GITHUB_WORKSPACE
 
-echo "Cloning source git repository"
-git config --global user.email "$USER_EMAIL"
-git config --global user.name "$GITHUB_USERNAME"
-git clone --single-branch --branch "$SOURCE_BRANCH" "https://$API_TOKEN_GITHUB@github.com/$GITHUB_REPOSITORY.git" "$CLONE_DIR"
+# CLONE_DIR=$(mktemp -d)
 
-cd "$CLONE_DIR"
+# echo "Cloning source git repository"
+# git config --global user.email "$USER_EMAIL"
+# git config --global user.name "$GITHUB_USERNAME"
+# git clone --single-branch --branch "$SOURCE_BRANCH" "https://$API_TOKEN_GITHUB@github.com/$GITHUB_REPOSITORY.git" "$CLONE_DIR"
+
+cd "$GITHUB_WORKSPACE"
 
 echo "Adding destination repository as remote"
 git remote add "$REMOTE_NAME" "https://$API_TOKEN_GITHUB@github.com/$REPO_USERNAME/$GITHUB_REPO.git"
