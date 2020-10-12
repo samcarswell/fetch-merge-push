@@ -1,0 +1,38 @@
+name: 'Fetch, merge and push to remote repo'
+description: 'Automate merging with a mirrored repo'
+inputs:
+  destination-github-username:
+    description: 'Name of the destination username/organization'
+    required: true
+  destination-repository-name:
+    description: 'Destination repository'
+    required: true
+  user-email:
+    description: 'Email for the git commit'
+    required: true
+  destination-repository-username:
+    description: '[Optional] Username/organization for the destination repository'
+    required: false
+  target-branch:
+    description: '[Optional] set target branch name for the destination repository'
+    required: false
+  source-branch:
+    description: '[Optional] set source branch name for the destination repository'
+    required: false
+  remote-name:
+    description: '[Optional] set remote name for the destination repository'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.destination-github-username }}
+    - ${{ inputs.destination-repository-name }}
+    - ${{ inputs.user-email }}
+    - ${{ inputs.destination-repository-username }}
+    - ${{ inputs.target-branch }}
+    - ${{ inputs.source-branch }}
+    - ${{ inputs.remote-name }}
+branding:
+  icon: 'git-commit'
+  color: 'green'
