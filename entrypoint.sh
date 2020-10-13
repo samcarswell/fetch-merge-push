@@ -8,6 +8,7 @@ REPO_USERNAME="$4"
 TARGET_BRANCH="$5"
 SOURCE_BRANCH="$6"
 REMOTE_NAME="$7"
+API_TOKEN_GITHUB="$8"
 
 if [ -z "$REPO_USERNAME" ]
 then
@@ -36,7 +37,6 @@ fi
 # echo "Cloning source git repository"
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
-cat .git/config
 # git clone --single-branch --branch "$SOURCE_BRANCH" "https://$API_TOKEN_GITHUB@github.com/$GITHUB_REPOSITORY.git" "$CLONE_DIR"
 
 cd "$GITHUB_WORKSPACE/main"

@@ -22,6 +22,9 @@ inputs:
   remote-name:
     description: '[Optional] set remote name for the destination repository'
     required: false
+  github-token:
+    description: 'GitHub PAT Token'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
