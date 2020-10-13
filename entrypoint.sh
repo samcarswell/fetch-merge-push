@@ -40,6 +40,8 @@ fi
 
 cd "$GITHUB_WORKSPACE/main"
 
+echo $(ls -la)
+
 echo "Adding destination repository as remote"
 git remote add "$REMOTE_NAME" "https://$API_TOKEN_GITHUB@github.com/$REPO_USERNAME/$GITHUB_REPO.git"
 
