@@ -34,8 +34,8 @@ fi
 # CLONE_DIR=$(mktemp -d)
 
 # echo "Cloning source git repository"
-# git config --global user.email "$USER_EMAIL"
-# git config --global user.name "$GITHUB_USERNAME"
+git config --global user.email "$USER_EMAIL"
+git config --global user.name "$GITHUB_USERNAME"
 # git clone --single-branch --branch "$SOURCE_BRANCH" "https://$API_TOKEN_GITHUB@github.com/$GITHUB_REPOSITORY.git" "$CLONE_DIR"
 
 cd "$GITHUB_WORKSPACE/main"
