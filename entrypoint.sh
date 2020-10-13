@@ -38,7 +38,7 @@ fi
 # git config --global user.name "$GITHUB_USERNAME"
 # git clone --single-branch --branch "$SOURCE_BRANCH" "https://$API_TOKEN_GITHUB@github.com/$GITHUB_REPOSITORY.git" "$CLONE_DIR"
 
-cd "$GITHUB_WORKSPACE"
+cd "$GITHUB_WORKSPACE/main"
 
 echo "Adding destination repository as remote"
 git remote add "$REMOTE_NAME" "https://$API_TOKEN_GITHUB@github.com/$REPO_USERNAME/$GITHUB_REPO.git"
